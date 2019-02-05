@@ -1,0 +1,365 @@
+/**
+{
+    margin: 0px;
+}
+*/
+body
+{
+    width: 100%;
+    height: 100%;
+    overflow-x:hidden;
+}
+html{
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration:none;
+}
+img {
+    height: 100px;
+    width: 100px;
+}
+.container{
+  width: 100%;
+}
+
+/*header */
+header {
+    background: #35424a;
+    color: #ffffff;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+    width: 100%;
+    padding: 30px 10px 0px;
+}
+
+/*all header links */
+header a{
+  color:#ffffff;
+  text-decoration:none; /*remove the underline links have by default  */
+  font-size: 16px;
+}
+
+@media (max-width:768px){
+    header nav {
+        float: right;
+        margin-top: 0px!important;
+    }
+    body {
+    width: 100%;
+    height: 100%;
+    padding: 0px 8px 0px 0px;
+}
+}
+/*for list items themselves.  */
+header li{
+  display:inline;
+  padding: 0 20px 0 20px; /* top, right, bottom, left , clockwise rotation*/
+}
+
+header #branding{
+  float:left;
+}
+
+header #branding h1 {
+    margin: 5px 0px;
+    font-size: 25px;
+}
+
+header nav{
+      float: right;
+    margin-right: 2%;
+}
+
+header .highlight, header .current a{
+  color:#e8491d;
+  font-weight:bold;
+}
+
+header a:hover{
+  color:#cccccc;
+  font-weight:bold;
+}
+
+@media(max-width:768px){
+    header nav {
+    float: right;
+    width: 100%;
+}
+header li {
+    display: inline;
+    padding: 0 5px 0 5px;
+}
+    header .highlight, header .current a {
+        color: #e8491d;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    header #branding h1 {
+        margin-left: 10px;
+        font-size: 15px;
+        display: block;
+        text-align: center!IMPORTANT;
+    }
+    header a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 13px!IMPORTANT;
+    }
+    header #branding h1 {
+        margin-left:10px;
+        font-size: 15px;
+        display: block;
+        text-align: center!IMPORTANT;
+
+    }
+}
+
+/* END OF HEADER SECTION */
+
+
+
+/* TABLET */
+
+
+#showcase {
+    min-height: 400px;
+    background: url(../img/bunny.jpg) no-repeat 0 -400px;
+    text-align: center;
+    color: #ffffff;
+    padding: 30px;
+}
+
+.login-form {
+    width: 23%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 180px;
+    min-height: 140px;
+    background: #35424a;
+    padding: 10px;
+}
+.user-edit-form
+{
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 140px;
+    min-height: 280px;
+    background: #35424a;
+    padding: 10px;
+}
+.adminupdate-form
+{
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 120px;
+    min-height: 120px;
+    background: #35424a;
+    padding: 10px;
+}
+.signup-form {
+    width: 23%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 0px;
+    margin-bottom: 120px;
+    min-height: 200px;
+    background: #35424a;
+    padding: 10px;
+}
+
+.form-control {
+    width: 100%;
+    background: none;
+    color: white;
+    padding: 10px 5px 10px 5px;
+    border-radius: 0px;
+    margin: 5px 0px 5px 0px;
+    border: 2px solid white;
+    text-align: center;
+    
+}
+
+.button1 {
+
+    height: 30px;
+    background: #e8491d;
+    border-radius: 0.5px;
+    border: 0;
+    padding-left: 20px;
+    padding-top: 6px;
+    padding-right: 20px;
+    color: #ffffff;
+    float: right;
+    margin-right: 27px;
+
+}
+footer{
+  padding:20px;
+  color:#ffffff;
+  background-color:#e8491d;
+  text-align: center;
+  width: 100%;
+}
+@media (max-width:768px){
+.button1 {
+    height: 30px;
+    background: #e8491d;
+    border-radius: 0.5px;
+    border: 0;
+    padding-left: 20px;
+    padding-top: 6px;
+    padding-right: 20px;
+    color: #ffffff;
+    float: right;
+    margin: 0px 10px;
+}
+.login-form {
+    width: 86%;
+    }
+    .signup-form {
+    width: 86%;
+}
+
+#myTable {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: orange;
+    border: 1px solid #ddd;
+    font-size: 13px;
+    overflow-x: scroll!important;
+    margin-bottom: 20px!important;
+    margin-right: 0px!important;
+    margin-left: 0px!important;
+    margin-top: 10px!important;
+}
+.col-11 {
+    width: 100%!important;
+    float: left;
+    overflow-x: scroll;
+}
+}
+
+/*USER PROFILE PAGE STYLING*/
+
+.col-1 {
+    width: 8.33%;
+    float: left;
+}
+.col-2 {
+    width: 16.66%;
+    float: left;
+}
+.col-3 {
+    width: 25%;
+    float: left;
+}
+.col-4 {
+    width: 33.33%;
+    float: left
+}
+.col-5 {
+    width: 41.66%;
+    float: left;
+}
+.col-6 {
+    width: 50%;
+    float: left;
+
+}
+.col-7 {
+    width: 58.33%;
+    float: left;
+}
+.col-8 {
+    width: 66.66%;
+    float: left;
+    padding-bottom:20px;
+}
+.col-9 {
+    width: 75%;
+    float:left;
+}
+.col-10 {
+    width: 83.33%;
+    float: left;
+}
+.col-11 {
+    width: 91.66%;
+    float: left;
+
+}
+.col-12 {
+    width:100%;
+    float:left;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* the table styling */
+#myTable {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: orange;
+    border: 1px solid #ddd;
+    font-size: 15px;
+    margin-top: 30px;
+    overflow-x: none;
+    margin-right: 30px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+#myTable td {
+    text-align: left;
+    padding: 12px;
+}
+
+#myTable th {
+    text-align: left;
+    padding: 12px;
+    color: black;
+    background-color: #e8491d;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#myTable tr {
+    /* Add a bottom border to the  table rows */
+    border-bottom: 1px solid #ddd;
+}
+/* the styling for the content */
+.content{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.button2 {
+
+    background: #e8491d;
+    border-radius: 0.5px;
+    border: 0;
+    padding: 6px 10px;
+    color: #ffffff;
+    margin-left: 25px;
+    width: 50%;
+    float: right;
+    margin-right: 36px;
+    margin-top: 20px;
+
+}
+
