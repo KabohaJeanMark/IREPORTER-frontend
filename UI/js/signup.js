@@ -41,11 +41,11 @@ function regUser(){
     //posting to the db
 
     var user_regdata = {
-        firstName:fname,
-        lastName:lname,
-        otherNames:oname,
+        first_name:fname,
+        last_name:lname,
+        othernames:oname,
         username:username,
-        phonenumber: phonenumber,
+        phone_number: phonenumber,
         email:email,
         password:password
     }
@@ -68,8 +68,9 @@ function regUser(){
                 alert('That email is already taken');
                 return false
             }
-            else if(message['data'][0]['message'] === 'User has been succesfully created'){
-                alert('User has been succesfully created');
+            else if(message['data'][0]['message']==='user created successfully'){
+            	window.location.replace('index.html');
+                alert('account created successfully');
             }
     });
     
