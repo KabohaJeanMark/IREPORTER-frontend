@@ -68,9 +68,9 @@ function regUser(){
                 alert('That email is already taken');
                 return false
             }
-            else if(message['data'][0]['message']==='user created successfully'){
+            else if(message['data'][0]['message']==='User has been succesfully created'){
             	window.location.replace('index.html');
-                alert('account created successfully');
+                alert('User has been succesfully registered');
             }
     });
     
