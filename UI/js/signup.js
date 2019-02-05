@@ -1,4 +1,5 @@
 function regUser(){
+    //getting user input data from form
     var fname = document.getElementById('firstName').value;
 	var lname = document.getElementById('lastName').value;
 	var oname = document.getElementById('otherName').value;
@@ -13,19 +14,19 @@ function regUser(){
         alert("please fill in your first name");
         return false
     }
-    if(lname ==''){
+    else if(lname ==''){
         alert("please fill in your last name");
         return false
     }
-    if(oname ==''){
+    else if(oname ==''){
         alert("please fill in your other name");
         return false
     }
-    if(username ==''){
+    else if(username ==''){
         alert("please fill in your username");
         return false
     }
-    if (phonenumber == ''){
+    else if (phonenumber == ''){
         alert("please fill in your phone number");
         return false
     }
@@ -36,4 +37,40 @@ function regUser(){
         alert("please enter your password");
         return false
     }
+
+    //posting to the db
+
+    var user_regdata = {
+        firstName:fname,
+        lastName:lname,
+        otherNames:oname,
+        username:username,
+        phonenumber: phonenumber,
+        email:email,
+        password:password
+    }
+
+    fetch('http://127.0.0.1:5000/api/v1/auth/signup',{
+        method:'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type':'application/json'
+        },
+        body:JSON.stringify(user_regdata)
+    })
+        .then((response) => response.json())
+        .then(function(message){
+            if(message['message']=== 'That username already exists'){
+                alert('That username already exists');
+                return false
+            }
+            else if(message['message']=== 'That email is already taken'){
+                alert('That email is already taken');
+                return false
+            }
+            else if(message['data'][0]['message'] === 'User has been succesfully created'){
+                alert('User has been succesfully created');
+            }
+    });
+    
 }
