@@ -68,6 +68,20 @@ function regUser(){
                 alert('That email is already taken');
                 return false
             }
+            else if(message['message']=== 'The phone number should be a string of atleast 10 digits'){
+                alert('The phone number should be a string of atleast 10 digits');
+                return false
+            }
+            else if(message['message']=== 'The email address is in the wrong format'){
+                alert('The email address is in the wrong format');
+                return false
+            }
+            else if(message['message']=== 'The username should be a normal string without special characters'){
+                alert('The username should be a normal string without special characters');
+                return false
+            }
+
+            
             else if(message['data'][0]['message']==='User has been succesfully created'){
             	window.location.replace('index.html');
                 alert('User has been succesfully registered');
