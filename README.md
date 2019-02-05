@@ -6,7 +6,7 @@ This application enables users to make reports about corruption incidents.
 Clone this project to your computer. You can work on and keep making it better.
 
 ## Project Link
-https://github.com/KabohaJeanMark/iReporter/tree/develop
+https://github.com/KabohaJeanMark/IREPORTER-CHALLENGE-4/tree/develope
 
 
 ## Features
@@ -30,4 +30,4 @@ https://github.com/KabohaJeanMark/iReporter/tree/develop
 Kaboha Jean Mark Kairumba
 
 ## Licensing
-The is an opensource application. All users are free to edit and improve it. Code away.
+The is an open source application. All users are free to edit and improve it. Code away.
