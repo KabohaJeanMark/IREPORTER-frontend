@@ -8,6 +8,7 @@
     <meta name="description" content="For voices to be heard. Fighting corruption">
     <title> iReporter | Log in </title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src = "./js/post.js"></script> 
   </head>
 
   <body>
@@ -35,13 +36,13 @@
         <div class="user-edit-form">
         <form method=" " action="">
             <table>
+                <tr>
+                    <td><label></label></td>
+                    <td><input class="form-control" type="text" name="name" id="name" placeholder="enter name"> </td>
+                </tr>
               <tr>
                   <td><label></label></td>
                   <td><input class="form-control" type="text" name="description" id="description" placeholder="enter description"> </td>
-              </tr>
-              <tr >
-                  <td><label></label></td>
-                  <td><input class="form-control" type="text" name="comment" id="comment" placeholder="enter comment" ></td>
               </tr>
               <tr>
                   <td><label></label></td>
@@ -51,6 +52,10 @@
                   <td><label></label></td>
                   <td><input class="form-control" type="text" name="longitude" id="longitude" placeholder="enter longitude"> </td>
               </tr>
+              <tr >
+                  <td><label></label></td>
+                  <td><input class="form-control" type="text" name="comment" id="comment" placeholder="enter comment" ></td>
+              </tr>
               <tr>
                   <td><label></label></td>
                   <td><input type="file" name="pic" value="add image" alt="add image" accept="image/*"></td>
@@ -59,7 +64,7 @@
 
             </table>
                     <div>
-                        <input type="button" id="login" value="add redflag" class="button1" onclick="addRedfalg()">
+                        <input type="button" id="login" value="add redflag" class="button1" onclick="addRedflag()">
                     </div>
              </form>
       </div>
