@@ -59,6 +59,8 @@ function regUser(){
         body:JSON.stringify(user_regdata)
     })
         .then((response) => response.json())
+        //.then(response => response.text())
+        //.then(text => console.log(text))
         .then(function(message){
             if(message['message']=== 'That username already exists'){
                 alert('That username already exists');
