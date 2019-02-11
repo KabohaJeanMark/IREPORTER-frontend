@@ -30,4 +30,22 @@ function addRedflag(){
     else if(comment ==""){
         alert("Please fill in description");
     }
+
+
+    var post_data = {
+        name: name,
+        description: description,
+        latitude: latitude,
+        longitude: longitude,
+        comment: comment
+    }
+
+    fetch('http://127.0.0.1:5000/api/v1/redflags',{
+        method:'POST',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type':'application/json'
+        },
+        body:JSON.stringify(post_data)
+    })
 }
