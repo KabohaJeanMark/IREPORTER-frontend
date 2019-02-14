@@ -1,3 +1,5 @@
+var user_token = localStorage.getItem('token')
+
 function addRedflag(){
     //capture user input
     var name = document.getElementById('name').value;
@@ -5,6 +7,7 @@ function addRedflag(){
     var latitude=document.getElementById('latitude').value;
     var longitude = document.getElementById("longitude").value;
     var comment=document.getElementById('comment').value;
+    var image = document.getElementById('image').value;
 
     //validation
     //var userInputs = [name, description, latitude, longitude, comment];
@@ -30,6 +33,9 @@ function addRedflag(){
     else if(comment ==""){
         alert("Please fill in description");
     }
+    else if(image == ""){
+        alert("Please fill in image url");
+    }
 
 
     var post_data = {
@@ -37,6 +43,7 @@ function addRedflag(){
         description: description,
         latitude: latitude,
         longitude: longitude,
+        images: image,
         comment: comment
     }
 
@@ -44,8 +51,24 @@ function addRedflag(){
         method:'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
-            'Content-type':'application/json'
+            'Content-type':'application/json',
+            Authorization:`Bearer ${user_token}`
         },
         body:JSON.stringify(post_data)
     })
+    .then((response) => response.json())
+        .then(function(message){
+            if(message['data'][0]['message'] === 'Created red_flag record'){
+                alert('Created red_flag record');
+                window.location.replace('userprofile.html');
+
+            }
+            else if(message['msg'] === 'Token has expired'){
+                alert('please log in again');
+                window.location.replace('index.html');
+
+            }
+
+
+        });
 }
