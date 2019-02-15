@@ -8,7 +8,6 @@
     <meta name="description" content="For voices to be heard. Fighting corruption">
     <title> iReporter | Create Redflag </title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src = "./js/post.js"></script> 
   </head>
 
   <body>
@@ -34,7 +33,8 @@
       </div>
 
         <div class="user-edit-form">
-        <form method=" " action="">
+        <form id="add_red">
+            <div id="message"></div>
             <table>
                 <tr>
                     <td><label></label></td>
@@ -64,7 +64,7 @@
 
             </table>
                     <div>
-                        <input type="button" id="login" value="add redflag" class="button1" onclick="addRedflag()">
+                        <input type="submit" value="add redflag" class="button1">
                     </div>
              </form>
       </div>
@@ -74,5 +74,7 @@
     <footer>
       <p>iReporter , Copyright &copy; 2018</p>
     </footer>
+
+    <script src = "./js/post.js"></script> 
   </body>
 </html>
