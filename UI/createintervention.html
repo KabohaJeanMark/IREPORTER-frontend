@@ -6,8 +6,9 @@
     <meta name="author" content="Kaboha Jean Mark Kairumba">
     <meta name="keywords" content="reporting, corruption">
     <meta name="description" content="For voices to be heard. Fighting corruption">
-    <title> iReporter | Log in </title>
+    <title> iReporter | Create Intervention </title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src=".js/addInterventions.js"></script>
   </head>
 
   <body>
@@ -28,12 +29,13 @@
     <main>
       <section id="showcase">
       <div class="container">
-        <h1>Easy reporting</h1>
+        <h1>Fill in form below to create an intervention post</h1>
         <p></p>
       </div>
 
         <div class="user-edit-form">
-        <form method=" " action="">
+        <form id="add_interv">
+            <div id="messageInterv"></div>
             <table>
               <tr>
                   <td><label></label></td>
@@ -52,14 +54,18 @@
                   <td><input class="form-control" type="text" name="longitude" id="longitude" placeholder="enter longitude"> </td>
               </tr>
               <tr>
+                <td><label></label></td>
+                <td><input class="form-control" type="text" name="comment" id="comment" placeholder="enter comment"> </td>
+            </tr>
+              <tr>
                   <td><label></label></td>
-                  <td><input type="file" name="pic" value="add image" alt="add image" accept="image/*"></td>
+                  <td><input class="form-control" type="text" name="image" id="image" placeholder="enter image url"></td>
               </tr>
 
 
             </table>
                     <div>
-                        <input type="submit" id="login" value="add intervention" class="button1">
+                        <input type="submit" value="add intervention" class="button1">
                     </div>
              </form>
       </div>

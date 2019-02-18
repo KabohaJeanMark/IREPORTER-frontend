@@ -29,14 +29,18 @@ function signIn(){
     })
         .then((response) => response.json())
         .then(function(message){
-            if(message['message']=== 'Please enter valid username and password'){
+            if(message['token']){
+                window.location.replace('userprofile.html');
+                alert('successfully logged in');
+
+                var token = message['token'];
+                localStorage.setItem('token',token);
+            }
+            else if(message['message']=== 'Please enter valid username and password'){
                 alert('Please enter valid username and password');
                 return false
             }
-            else if(message['message']=== 'successfully logged in');{
-                window.location.replace('userprofile.html');
-                alert('successfully logged in');
-            }
+
 
         });
 
