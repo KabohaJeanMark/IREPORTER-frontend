@@ -56,12 +56,12 @@ else {
     })
         .then((response) => response.json())
         .then(function (message) {
-            if (message['data'][0]['message'] === 'Created red_flag record') {
+            if (message['data'][0]['message'] === 'Created incident record') {
                 alert('Created red_flag record');
                 window.location.replace('userprofile.html');
 
             }
-            else if (message['msg'] === 'Token has expired') {
+            else if (message['error'] === 'token is invalid!') {
                 alert('please log in again');
                 window.location.replace('index.html');
 
