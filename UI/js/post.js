@@ -170,7 +170,7 @@ window.onload = function GetRedFlags() {
         .then((response)=> response.json())
         .then(function (message){
             if(message['data']){
-                var table_output =`<table id="myTable">
+                table_output =`<table id="myTable">
                 <tr class="header">
                     <th>Type</th>
                     <th>Name</th>
@@ -323,5 +323,7 @@ function deleteRedflag(redflag_id){
     
             });
 }
+
+
 
     
