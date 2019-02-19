@@ -12,12 +12,17 @@ function signIn(){
         alert("Please fill in your password");
         return false
     }
+    else if(user_name =='admin' && pass_word =='admin1'){
+        window.location.replace('admin_profile.html');
+        alert("Welcome admin");
+    }
 
     //posting data to the db
     var signin_data = {
         username: user_name,
         password: pass_word
     }
+
 
     fetch('http://127.0.0.1:5000/api/v1/auth/login',{
         method:'POST',
