@@ -19,7 +19,7 @@
         </div>
         <nav>
           <ul>
-            <li class="current"><a href="index.html">LOGIN</a></li>
+            <li class="current"><a href="index.html">USER LOGIN</a></li>
             <li><a href="signup.html">SIGNUP</a></li>
           </ul>
         </nav>
@@ -28,22 +28,25 @@
 
     <main>
       <section id="showcase">
-      
+      <br>
+      <h3 style="color: #222;">Admin Login</h3>
+      <br>
 
         <div class="login-form">
-        <form method=" " action="userprofile.html">
+        <form method=" " action="admin_profile.html">
             <table>
               <tr>
                   <td><label></label></td>
-                  <td><input class="form-control" type="text" name="username" id="username" placeholder="enter username"> </td>
+                  <td><input class="form-control" type="text" name="username" id="ad_username" placeholder="enter username"> </td>
               </tr>
               <tr >
                   <td><label></label></td>
-                  <td><input class="form-control" type="password" name="password" id="password" placeholder="enter password" ></td>
+                  <td><input class="form-control" type="password" name="password" id="ad_password" placeholder="enter password" ></td>
               </tr>
             </table>
                     <div>
-                        <input type="button" id="login" value="login" class="button1" onclick="signIn()">
+                        <!-- <input type="button" id="login" value="login" class="button1" onclick="signIn()"> -->
+                        <a href="admin_profile.html"><input type="button" id="ad_login" value="Login" class="button1"> </a>
                     </div>
              </form>
       </div>

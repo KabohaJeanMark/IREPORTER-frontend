@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,7 +9,6 @@
     <meta name="description" content="For voices to be heard. Fighting corruption">
     <title> iReporter | Log in </title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/login.js"></script>
   </head>
 
   <body>
@@ -19,31 +19,31 @@
         </div>
         <nav>
           <ul>
-            <li class="current"><a href="index.html">LOGIN</a></li>
-            <li><a href="signup.html">SIGNUP</a></li>
+            <li class="current"><a href="userprofile.html">YOUR INCIDENTS</a></li>
+            <li><a href="index.html">LOGOUT</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
     <main>
-      <section id="showcase">
-      
+      <section id="showcase" class="edit_inter">
+      <div class="container">
+        <h2 style="color:#333">Edit The Location</h2>
+        <p></p>
+      </div>
 
         <div class="login-form">
-        <form method=" " action="userprofile.html">
+        <form method=" " action="">
+            <div id="message_location"></div>
             <table>
-              <tr>
+               <tr>
                   <td><label></label></td>
-                  <td><input class="form-control" type="text" name="username" id="username" placeholder="enter username"> </td>
-              </tr>
-              <tr >
-                  <td><label></label></td>
-                  <td><input class="form-control" type="password" name="password" id="password" placeholder="enter password" ></td>
+                  <td><input class="form-control" type="text" name="location" id="ed_location" placeholder="enter new location"></td>
               </tr>
             </table>
                     <div>
-                        <input type="button" id="login" value="login" class="button1" onclick="signIn()">
+                        <input type="button" id="submit" value="submit" class="button1" onclick="updateLocation()"/>
                     </div>
              </form>
       </div>
@@ -51,6 +51,7 @@
     </main>
     
     <footer>
+        <script src = "./js/post.js"></script> 
       <p>iReporter , Copyright &copy; 2018</p>
     </footer>
   </body>
