@@ -129,10 +129,14 @@ header li {
     text-align: center;
     color: #ffffff;
     padding: 30px;
+
+}
+.profile-page #showcase {
+  color: #222;
 }
 
 .login-form {
-    width: 23%;
+    width: 20%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -156,7 +160,7 @@ header li {
 }
 .adminupdate-form
 {
-    width: 320px;
+    width: 380px;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -167,7 +171,7 @@ header li {
     padding: 10px;
 }
 .signup-form {
-    width: 23%;
+    width: 20%;
     margin-left: auto;
     margin-right: auto;
     display: block;
@@ -231,7 +235,7 @@ header li {
 
 }
 .form-control {
-    width: 100%;
+    /*width: 100%;*/
     background: none;
     color: white;
     padding: 10px 5px 10px 5px;
@@ -252,7 +256,7 @@ header li {
     /*padding-top: 6px;*/
     padding-right: 20px;
     color: #ffffff;
-    float: right;
+    /*float: right;*/
     margin-right: 27px;
 
 }
@@ -408,10 +412,104 @@ footer{
     padding: 6px 10px;
     color: #ffffff;
     margin-left: 25px;
-    width: 50%;
+    width: 72%;
     float: right;
     margin-right: 36px;
     margin-top: 20px;
 
 }
+
+/*for the profile page*/
+.profile {
+    background-color: orange;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 500px;
+}
+.profile .my-flex{
+    display: flex;
+}
+.profile hr{
+   color: #000;
+}
+.profile img.img-profile {
+    border-radius: 50%;
+    width: 150px!important;
+    height: 150px!important;
+} 
+.profile .dashboard-left {
+    border-radius:1%;
+    padding: 20px;
+    background-color: #e8491d;
+    box-shadow: 2px 2px 4px #000;
+    margin-right: 40px;
+}
+.profile .dashboard-left {
+    border-radius:1%;
+    padding: 20px;
+    background-color: #e8491d;
+    box-shadow: 2px 2px 4px #000;
+    margin-right: 40px;
+    width: 30%;
+}
+.profile .dashboard-left p{
+    color: #fff;
+}
+.profile .dashboard-redflag {
+    width: 30%;
+    margin: 0px 70px;
+}
+.profile .dashboard-redflag h3{
+   color:red;
+}
+.profile .dashboard-intervention h3{
+   color:grey;
+}
+.profile .dashboard-intervention{
+    width: 30%;
+    margin: 0px 70px;
+   float: right;
+}
+
+.dash {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    border-radius: 25% 10%;
+}
+
+/*for the badges*/
+.profile .dashboard-redflag .dash-stat {
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    padding: 5% 5%;
+    background-color: red;
+    height: 20px;
+    width:20px;
+}
+.profile .dashboard-intervention .dash-stat {
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    padding: 5% 5%;
+    background-color: grey;
+    height: 20px;
+    width:20px;
+}
+.bg-orange {
+    background: var(--orange);
+}
+.redflag-link h3{
+    color: red;
+}
+.intervention-link h3{
+    color:#222;
+}
+
+.edit_inter table{
+ width: 100%
+}
+
 

@@ -30,7 +30,7 @@ function signIn(){
         .then((response) => response.json())
         .then(function(message){
             if(message['token']){
-                window.location.replace('userprofile.html');
+                window.location.replace('user_profile.html');
                 alert('successfully logged in');
 
                 var token = message['token'];
