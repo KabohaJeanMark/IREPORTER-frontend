@@ -170,25 +170,28 @@ window.onload = function GetRedFlags() {
         .then((response)=> response.json())
         .then(function (message){
             if(message['data']){
-                let table_output =`<table id="myTable">
+                var table_output =`<table id="myTable">
                 <tr class="header">
                     <th>Type</th>
                     <th>Name</th>
                     <th>Description</th>
                     <th>Image</th>
                     <th>Location</th>
+                    <th>Comment</th>
                     <th>State</th>
                     <th>Edit</th>
                     <th>Delete</th>
                 </tr> `;
                 message['data'].forEach(function (data){
-                    let redflag_id =data.incident_id;
+                    var redflag_id =data.incident_id;
+                    localStorage.setItem('redflag_id',redflag_id);
                     table_output+=`<tr>
                     <td>${data.type}</td>
                     <td>${data.name}</td>
                     <td>${data.description}</td>
                     <td>${data.images}</td>
                     <td>${data.location}</td>
+                    <td>${data.comment}</td>
                     <td>${data.status}</td>
                     <td><a href="edit_location.html" id="submit" class="button2">Edit Location</a><br>
                     <a href="edit_comment.html" id="submit" class="button2">Edit Comment</a></td>
@@ -203,3 +206,83 @@ window.onload = function GetRedFlags() {
             }
         });
     }
+
+function updateComment(redflag_id){
+    var redflag_id = localStorage.getItem('redflag_id');
+    console.log(redflag_id);
+    var patched_comment = document.getElementById('ed_comment').value;
+
+    if (patched_comment == "") {
+        document.getElementById('message_comment').innerHTML = "<p style='color: #f00; margin: 5px;'><strong>Error:</strong> Empty field new comment</p>";
+        document.getElementById('ed_comment').style.border = "2px #F00 solid";
+    }
+    var updatedComment ={
+        comment: patched_comment
+    }
+
+    fetch(`http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}/comment`, {
+        method: 'PATCH',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type': 'application/json',
+            'x-access-token': user_token
+        },
+        body: JSON.stringify(updatedComment)
+    })
+        .then((response) => response.json())
+        .then(function (message) {
+            if (message['data'][0]['message'] === "Updated incident's comment") {
+                alert('Updated redflag comment');
+                window.location.replace('user_profile.html');
+
+            }
+            else if (message['error'] === 'token is invalid!') {
+                alert('please log in again');
+                window.location.replace('index.html');
+
+            }
+
+
+        });
+    }
+
+function updateLocation(redflag_id){
+        var patched_location = document.getElementById('ed_location').value;
+        var redflag_id = localStorage.getItem('redflag_id');
+    
+        if (patched_location == "") {
+            document.getElementById('message_location').innerHTML = "<p style='color: #f00; margin: 5px;'><strong>Error:</strong> Empty field new location</p>";
+            document.getElementById('ed_location').style.border = "2px #F00 solid";
+        }
+        var updated_location ={
+            location: patched_location
+        }
+    
+        fetch(`http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}/comment`, {
+            method: 'PATCH',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-type': 'application/json',
+                'x-access-token': user_token
+            },
+            body: JSON.stringify(updated_location)
+        })
+            .then((response) => response.json())
+            .then(function (message) {
+                if (message['data'][0]['message'] === "Updated incident's comment") {
+                    alert('Updated redflag comment');
+                    window.location.replace('user_profile.html');
+    
+                }
+                else if (message['error'] === 'token is invalid!') {
+                    alert('please log in again');
+                    window.location.replace('index.html');
+    
+                }
+        
+        
+                });
+}
+
+
+    
