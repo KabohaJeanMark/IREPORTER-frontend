@@ -29,7 +29,7 @@
       <section id="showcase" class="create-record">
           <h1>Fill in form below to add a redflag post</h1>
           <div class="signup-form">
-            <form id="add_red" enctype="multipart/form-data">
+            <form id="add_red">
               <div id="message"></div>
               <table>
                 <tr>
@@ -56,7 +56,8 @@
   
               </table>
                   <div>
-                      <input type="submit" id="register" value="Submit" class="button1">
+                     <!-- <input type="submit" id="register" value="Submit" class="button1">  comment due to listener nul error-->
+                     <input type="button" id="reg" value="submit" class="button1" onclick="addRedflag()"/>
                   </div>
                </form>
           </div>
