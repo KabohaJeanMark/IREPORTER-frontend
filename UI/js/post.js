@@ -195,7 +195,7 @@ window.onload = function GetRedFlags() {
                     <td>${data.status}</td>
                     <td><a href="edit_location.html" id="submit" class="button2">Edit Location</a><br>
                     <a href="edit_comment.html" id="submit" class="button2">Edit Comment</a></td>
-                    <td><input type="submit" value="delete" class="button2"></td>
+                    <td><a href="delete_redflag.html" id="submit" class="button2">Delete Redflag</a></td>
                 </tr>`;
                 });
                 document.getElementById('redflagViews').innerHTML=table_output;
@@ -241,6 +241,10 @@ function updateComment(redflag_id){
                 window.location.replace('index.html');
 
             }
+            else{
+                alert('redflag record not found');
+                window.location.replace('user_profile.html')
+            }
 
 
         });
@@ -279,10 +283,45 @@ function updateLocation(redflag_id){
                     window.location.replace('index.html');
     
                 }
+                else{
+                    alert('redflag record not found');
+                    window.location.replace('user_profile.html')
+                }
         
         
                 });
 }
 
+function deleteRedflag(redflag_id){
+    var redflag_id = localStorage.getItem('redflag_id');
+
+    fetch(`http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}`, {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json, text/plain, */*',
+            'Content-type': 'application/json',
+            'x-access-token': user_token
+        },
+    })
+        .then((response) => response.json())
+        .then(function (message) {
+            if (message['data'][0]['message'] === "Incident record has been deleted") {
+                alert('Deleted redflag record');
+                window.location.replace('user_profile.html');
+
+            }
+            else if (message['error'] === 'token is invalid!') {
+                alert('please log in again');
+                window.location.replace('index.html');
+
+            }
+            else{
+                alert('redflag record not found');
+                window.location.replace('user_profile.html')
+            }
+    
+    
+            });
+}
 
     
