@@ -60,7 +60,7 @@ function addRedflag(){
             .then(function (message) {
                 if (message['data'][0]['message'] === 'Created incident record') {
                     alert('Created red_flag record');
-                    window.location.replace('userprofile.html');
+                    window.location.replace('user_profile.html');
 
                 }
                 else if (message['error'] === 'token is invalid!') {
@@ -262,7 +262,7 @@ function updateLocation(redflag_id){
             location: patched_location
         }
     
-        fetch(`http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}/comment`, {
+        fetch(`http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}/location`, {
             method: 'PATCH',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
@@ -273,8 +273,8 @@ function updateLocation(redflag_id){
         })
             .then((response) => response.json())
             .then(function (message) {
-                if (message['data'][0]['message'] === "Updated incident's comment") {
-                    alert('Updated redflag comment');
+                if (message['data'][0]['message'] === "Updated incident's location") {
+                    alert('Updated redflag location');
                     window.location.replace('user_profile.html');
     
                 }
