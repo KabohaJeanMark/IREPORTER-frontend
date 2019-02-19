@@ -84,123 +84,122 @@ window.onload = function GetRedFlags() {
             'x-access-token': user_token
         },
     })
-        .then((response) => response.json())
+      //  .then((response) => response.json())
        //.then(response => console.log(response))
-       .then(function(message){
-           if(message['data']){
-                incident_records = ``
+    //    .then(function(message){
+    //        if(message['data']){
+    //             incident_records = ``
 
-                for (var incident = message['data'].length - 1; incident >= 0; incident--) {
-                    redflagId = message['data'][incident].id
-                    incidentStatus = message['data'][incident].status
-                    incident_records = ``
+    //             for (var incident = message['data'].length - 1; incident >= 0; incident--) {
+    //                 redflagId = message['data'][incident].id
+    //                 incidentStatus = message['data'][incident].status
+    //                 incident_records = ``
 
-                    if (incidentStatus === 'draft') {
-                        incident_records += `
-                            <table id="myTable">
-                                <tr class="header">
-                                    <th>Type</th>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Image</th>
-                                    <th>Location</th>
-                                    <th>State</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr> 
-                                <tr>
-                                    <td id= "incident_type" >${message['data'][incident].type}</td><td id= "incident_name">${message['data'][incident].name}</td><td id="incident_description">${message['data'][incident].description}</td>
-                                    <td id="incident_image">${message['data'][incident].image}</td><td id="location">${message['data'][incident].location}</td>
-                                    <td id= "status">draft</td>
-                                    <td><a href="userEdit.html" id="submit" class="button2">Edit</a></td>
-                                    <td><input type="submit" value="delete" class="button2"></td>
-                                </tr>
-                            </table>
-                        <br/><br/>`
+    //                 if (incidentStatus === 'draft') {
+    //                     incident_records += `
+                            // <table id="myTable">
+                            //     <tr class="header">
+                            //         <th>Type</th>
+                            //         <th>Name</th>
+                            //         <th>Description</th>
+                            //         <th>Image</th>
+                            //         <th>Location</th>
+                            //         <th>State</th>
+                            //         <th>Edit</th>
+                            //         <th>Delete</th>
+                            //     </tr> 
+    //                             <tr>
+    //                                 <td id= "incident_type" >${message['data'][incident].type}</td><td id= "incident_name">${message['data'][incident].name}</td><td id="incident_description">${message['data'][incident].description}</td>
+    //                                 <td id="incident_image">${message['data'][incident].image}</td><td id="location">${message['data'][incident].location}</td>
+    //                                 <td id= "status">draft</td>
+    //                                 <td><a href="userEdit.html" id="submit" class="button2">Edit</a></td>
+    //                                 <td><input type="submit" value="delete" class="button2"></td>
+    //                             </tr>
+    //                         </table>
+    //                     <br/><br/>`
                         
-                    }
-                    else {
-                        incident_records += `
-                        <div class="col-11">
-                            <table id="myTable">
-                                <tr class="header">
-                                    <th>Type</th>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Image</th>
-                                    <th>Location</th>
-                                    <th>State</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr> 
-                                <tr>
-                                    <td id= "incident_type" >${message['data'][item].type}</td>
-                                    <td id= "incident_name">
-                                    ${message['data'][incident].name}
-                                    </td>
-                                    <td id="incident_description">${message['data'][incident].description}</td>
-                                    <td id="incident_image">${message['data'][incident].image}</td>
-                                    <td id="location">${message['data'][incident].location}</td>
-                                    <td id= "status">${message['data'][incident].status}</td>
-                                    <td>You cannot Edit</td>
-                                    <td>You cannot delete</td>
-                                </tr>
-                            </table>
-                        </div>
+    //                 }
+    //                 else {
+    //                     incident_records += `
+    //                     <div class="col-11">
+    //                         <table id="myTable">
+    //                             <tr class="header">
+    //                                 <th>Type</th>
+    //                                 <th>Name</th>
+    //                                 <th>Description</th>
+    //                                 <th>Image</th>
+    //                                 <th>Location</th>
+    //                                 <th>State</th>
+    //                                 <th>Edit</th>
+    //                                 <th>Delete</th>
+    //                             </tr> 
+    //                             <tr>
+    //                                 <td id= "incident_type" >${message['data'][item].type}</td>
+    //                                 <td id= "incident_name">
+    //                                 ${message['data'][incident].name}
+    //                                 </td>
+    //                                 <td id="incident_description">${message['data'][incident].description}</td>
+    //                                 <td id="incident_image">${message['data'][incident].image}</td>
+    //                                 <td id="location">${message['data'][incident].location}</td>
+    //                                 <td id= "status">${message['data'][incident].status}</td>
+    //                                 <td>You cannot Edit</td>
+    //                                 <td>You cannot delete</td>
+    //                             </tr>
+    //                         </table>
+    //                     </div>
                         
-                        <br/>
-                        <br/>
-                        <br/>`
+    //                     <br/>
+    //                     <br/>
+    //                     <br/>`
 
-                    }
-                }
-                document.getElementById('redflagViews').innerHTML = incident_records;
+    //                 }
+    //             }
+    //             document.getElementById('redflagViews').innerHTML = incident_records;
+    //         }
+    //         else if(message['message'] === 'incident record not found'){
+    //                 incident_records = `<h1>red-flag records not found!</h1>`;
+    //                 document.getElementById('redflagViews').innerHTML = incident_records;
+    //             }
+    //         else{
+    //                 incident_records=`<h1>token has expired please login again!</h1>`
+    //                 document.getElementById('redflagViews').innerHTML=incident_records;
+    //             }
+            
+            
+    //     });
+        .then((response)=> response.json())
+        .then(function (message){
+            if(message['data']){
+                let table_output =`<table id="myTable">
+                <tr class="header">
+                    <th>Type</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Location</th>
+                    <th>State</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr> `;
+                message['data'].forEach(function (data){
+                    let redflag_id =data.incident_id;
+                    table_output+=`<tr>
+                    <td>${data.type}</td>
+                    <td>${data.name}</td>
+                    <td>${data.description}</td>
+                    <td>${data.images}</td>
+                    <td>${data.location}</td>
+                    <td>${data.status}</td>
+                    <td><a href="edit_location.html" id="submit" class="button2">Edit Location</a><br>
+                    <a href="edit_comment.html" id="submit" class="button2">Edit Comment</a></td>
+                    <td><input type="submit" value="delete" class="button2"></td>
+                </tr>`;
+                });
+                document.getElementById('redflagViews').innerHTML=table_output;
+            }else{
+                // display message to  the user incase they don't have any parcel orders
+                document.getElementById('redflagViews').style.color="red";
+                document.getElementById('redflagViews').innerHTML=`<h2>empty parcel orders list</h2>`;
             }
-            else if(message['message'] === 'incident record not found'){
-                    incident_records = `<h1>red-flag records not found!</h1>`;
-                    document.getElementById('redflagViews').innerHTML = incident_records;
-                }
-            else{
-                    incident_records=`<h1>token has expired please login again!</h1>`
-                    document.getElementById('redflagViews').innerHTML=incident_records;
-                }
-            
-            
         });
-        // .then((response)=> response.json())
-        // .then(function (data){
-        //     if(data['parcel_orders']){
-        //         let output =`<table id="myTable">
-        //         <tr class="header">
-        //             <th style="width:10%;">Serial No.</th>
-        //             <th style="width:10%;">Receiver</th>
-        //             <th style="width:30%;">Description</th>
-        //             <th style="width:10%;">Pick up</th>
-        //             <th style="width:10%;">Destination</th>
-        //             <th style="width:15%;">Current location</th>
-        //             <th style="width:10%;">Price</th>
-        //             <th style="width:10%;">Status</th>
-        //             <th style="width:15%;">Delivery </th>
-        //         </tr>`;
-        //         data['parcel_orders'].forEach(function (parcelorder){
-        //             let parcel_id =parcelorder.parcel_id;
-        //             output+=`<tr>
-        //             <td>${parcelorder.serial_no}</td>
-        //             <td>${parcelorder.receivers}</td>
-        //             <td>${parcelorder.description}</td>
-        //             <td>${parcelorder.pickup}</td>
-        //             <td>${parcelorder.destination}</td>
-        //             <td>${parcelorder.current_location}</td>
-        //             <td>${parcelorder.delivery_price}</td>
-        //             <td><span id="order-status" onclick="updateStatus(${parcel_id})">${parcelorder.status}</span></td>
-        //             <td><button  class="button-success" onclick="update_parcel_order(${parcel_id})">update</button></td>
-        //         </tr>`;
-        //         });
-        //         document.getElementById('parcels_content').innerHTML=output;
-        //     }else{
-        //         // display message to  the user incase they don't have any parcel orders
-        //         document.getElementById('parcels_content').style.color="red";
-        //         document.getElementById('parcels_content').innerHTML=`<h2>empty parcel orders list</h2>`;
-        //     }
-        // });
     }
