@@ -177,6 +177,7 @@ window.onload = function GetRedFlags() {
                     <th>Description</th>
                     <th>Image</th>
                     <th>Location</th>
+                    <th>Comment</th>
                     <th>State</th>
                     <th>Edit</th>
                     <th>Delete</th>
@@ -190,6 +191,7 @@ window.onload = function GetRedFlags() {
                     <td>${data.description}</td>
                     <td>${data.images}</td>
                     <td>${data.location}</td>
+                    <td>${data.comment}</td>
                     <td>${data.status}</td>
                     <td><a href="edit_location.html" id="submit" class="button2">Edit Location</a><br>
                     <a href="edit_comment.html" id="submit" class="button2">Edit Comment</a></td>
@@ -206,8 +208,8 @@ window.onload = function GetRedFlags() {
     }
 
 function updateComment(redflag_id){
-    var redflag_id = localStorage.getItem('redflag_id')
-    console.log(redflag_id)
+    var redflag_id = localStorage.getItem('redflag_id');
+    console.log(redflag_id);
     var patched_comment = document.getElementById('ed_comment').value;
 
     if (patched_comment == "") {
@@ -218,7 +220,7 @@ function updateComment(redflag_id){
         comment: patched_comment
     }
 
-    fetch('http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}/comment', {
+    fetch(`http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}/comment`, {
         method: 'PATCH',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -246,6 +248,7 @@ function updateComment(redflag_id){
 
 function updateLocation(redflag_id){
         var patched_location = document.getElementById('ed_location').value;
+        var redflag_id = localStorage.getItem('redflag_id');
     
         if (patched_location == "") {
             document.getElementById('message_location').innerHTML = "<p style='color: #f00; margin: 5px;'><strong>Error:</strong> Empty field new location</p>";
@@ -255,7 +258,7 @@ function updateLocation(redflag_id){
             location: patched_location
         }
     
-        fetch('http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}/comment', {
+        fetch(`http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}/comment`, {
             method: 'PATCH',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
@@ -266,8 +269,8 @@ function updateLocation(redflag_id){
         })
             .then((response) => response.json())
             .then(function (message) {
-                if (message['data'][0]['message'] === "Updated incident's location") {
-                    alert('Updated redflag location');
+                if (message['data'][0]['message'] === "Updated incident's comment") {
+                    alert('Updated redflag comment');
                     window.location.replace('user_profile.html');
     
                 }
