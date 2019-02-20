@@ -47,7 +47,7 @@ function addRedflag(){
             images: image,
             comment: comment
         }
-        fetch('http://127.0.0.1:5000/api/v1/incidents/redflags', {
+        fetch('https://kjmkirepohost.herokuapp.com/api/v1/incidents/redflags', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
@@ -77,7 +77,7 @@ function addRedflag(){
 }
 
 window.onload = function GetRedFlags() {
-    fetch("http://127.0.0.1:5000/api/v1/incidents/redflags", {
+    fetch("https://kjmkirepohost.herokuapp.com/api/v1/incidents/redflags", {
         method: 'GET',
         headers: {
             'Content-type': 'application/json',
@@ -202,7 +202,7 @@ window.onload = function GetRedFlags() {
             }else{
                 // display message to  the user incase they don't have any parcel orders
                 document.getElementById('redflagViews').style.color="red";
-                document.getElementById('redflagViews').innerHTML=`<h2>empty parcel orders list</h2>`;
+                document.getElementById('redflagViews').innerHTML=`<h2>empty incidents list. You have not yet added any.</h2>`;
             }
         });
     }
@@ -220,7 +220,7 @@ function updateComment(redflag_id){
         comment: patched_comment
     }
 
-    fetch(`http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}/comment`, {
+    fetch(`https://kjmkirepohost.herokuapp.com/api/v1/incidents/redflags/${redflag_id}/comment`, {
         method: 'PATCH',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -262,7 +262,7 @@ function updateLocation(redflag_id){
             location: patched_location
         }
     
-        fetch(`http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}/location`, {
+        fetch(`https://kjmkirepohost.herokuapp.com/api/v1/incidents/redflags/${redflag_id}/location`, {
             method: 'PATCH',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
@@ -295,7 +295,7 @@ function updateLocation(redflag_id){
 function deleteRedflag(redflag_id){
     var redflag_id = localStorage.getItem('redflag_id');
 
-    fetch(`http://127.0.0.1:5000/api/v1/incidents/redflags/${redflag_id}`, {
+    fetch(`https://kjmkirepohost.herokuapp.com/api/v1/incidents/redflags/${redflag_id}`, {
         method: 'DELETE',
         headers: {
             'Accept': 'application/json, text/plain, */*',
