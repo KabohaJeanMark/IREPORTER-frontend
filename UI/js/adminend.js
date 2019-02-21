@@ -1,5 +1,5 @@
 window.onload = function getAllIncidents(){
-    fetch("http://127.0.0.1:5000/api/v1/incidents", {
+    fetch("https://kjmkirepohost.herokuapp.com/api/v1/incidents", {
         method: 'GET',
         headers: {
             'Content-type': 'application/json'
@@ -12,7 +12,7 @@ window.onload = function getAllIncidents(){
                 table_output =`<table id="myTable">
                 <tr class="header">
                     <th>Type</th>
-                    <th>Name</th>
+                    <th>Title</th>
                     <th>Description</th>
                     <th>Image</th>
                     <th>Location</th>
@@ -39,7 +39,7 @@ window.onload = function getAllIncidents(){
             }else{
                 // display message to  the user incase they don't have any parcel orders
                 document.getElementById('allIncidentViews').style.color="red";
-                document.getElementById('allIncidentViews').innerHTML=`<h2>empty parcel orders list</h2>`;
+                document.getElementById('allIncidentViews').innerHTML=`<h2>empty incidents list</h2>`;
             }
         });
     }
@@ -57,7 +57,7 @@ function updateStatus(redflag_id){
         status: patched_status
     }
 
-    fetch(`http://127.0.0.1:5000/api/v1/incidents/${redflag_id}`, {
+    fetch(`https://kjmkirepohost.herokuapp.com/api/v1/incidents/${redflag_id}/status`, {
         method: 'PATCH',
         headers: {
             'Accept': 'application/json, text/plain, */*',
@@ -70,13 +70,17 @@ function updateStatus(redflag_id){
         .then(function (message) {
             if (message['data'][0]['message'] === "Updated incident's status") {
                 alert("Updated incident's status");
-                window.location.replace('user_profile.html');
+                window.location.replace('all_incidents.html');
 
             }
             else if (message['error'] === 'token is invalid!') {
                 alert('please log in again');
                 window.location.replace('index.html');
 
+            }
+            else if (message['data'][0]['message']==="The new status should be either 'under investigation','rejected' or 'resolved "){
+                alert("Incident status should be either 'under investigation','rejected' or 'resolved");
+                window.location.replace('update_status.html');
             }
             else{
                 alert('incident record not found');
