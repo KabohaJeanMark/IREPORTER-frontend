@@ -1,18 +1,18 @@
-function signIn(){
+function signIn() {
     var user_name = document.getElementById('username').value;
     var pass_word = document.getElementById('password').value;
 
 
     //form validation
-    if (user_name == ''){
+    if (user_name == '') {
         alert("Please fill in your username");
         return false
     }
-    else if(pass_word ==''){
+    else if (pass_word == '') {
         alert("Please fill in your password");
         return false
     }
-    else if(user_name =='admin' && pass_word =='admin1'){
+    else if (user_name == 'admin' && pass_word == 'admin1') {
         window.location.replace('admin_profile.html');
         alert("Welcome admin");
     }
@@ -24,30 +24,35 @@ function signIn(){
     }
 
 
-    fetch('https://kjmkirepohost.herokuapp.com/api/v1/auth/login',{
-        method:'POST',
+    fetch('https://kjmkirepohost.herokuapp.com/api/v1/auth/login', {
+        method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
-            'Content-type':'application/json'
+            'Content-type': 'application/json'
         },
-        body:JSON.stringify(signin_data)
+        body: JSON.stringify(signin_data)
     })
         .then((response) => response.json())
-        .then(function(message){
-            if(message['token']){
+        .then(function (message) {
+            if (message['token'] && message['message'] === "successfully logged in user") {
                 window.location.replace('user_profile.html');
-                alert('successfully logged in');
 
                 var token = message['token'];
-                localStorage.setItem('token',token);
+                localStorage.setItem('token', token);
             }
-            else if(message['message']=== 'Please enter valid username and password'){
-                alert('Please enter valid username and password');
-                return false
+            else if (message['token'] && message['message'] === "successfully logged in admin") {
+                window.location.replace('admin_profile.html');
+
+                var token = message['token'];
+                localStorage.setItem('token', token);
             }
+            else{
+                    alert('Please enter valid username and password');
+                    return false
+                }
 
 
-        });
+            });
 
 
 }
