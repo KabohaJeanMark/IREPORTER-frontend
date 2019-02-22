@@ -459,7 +459,7 @@ footer{
 
 /*for the profile page*/
 .profile {
-    background-color: orange;
+    background-color: rgba(232, 73, 29, 0.9);
     border-radius: 10px;
     padding: 20px;
     min-height: 500px;
@@ -564,7 +564,7 @@ footer{
 }
 /*for the homepage */
 .home-bg{
-    background-color: rgba(232, 73, 29, 0.5);
+    background-color: rgba(232, 73, 29, 0.9);
     padding: 30px;
     border-radius: 10px;
     min-height: 400px;
@@ -578,13 +578,11 @@ footer{
     padding: 10px 58px;
 }
 .my-grids h3 {
-    font-size: ;
     text-align: center;
     margin-bottom: 50px;
     color: #222;
 }
 .my-grids h2 {
-    font-size: ;
     text-align: center;
     margin-bottom: 30px;
     color: #e8491d;
