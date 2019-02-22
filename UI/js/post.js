@@ -5,6 +5,8 @@ var user_token = localStorage.getItem('token')
 
 function addRedflag(){
     //capture user input
+    var type = document.getElementById('incidentType').value;
+    localStorage.setItem('type',type);
     var name = document.getElementById('name').value;
     var description = document.getElementById('description').value;
     var location = document.getElementById('location').value;
@@ -47,7 +49,7 @@ function addRedflag(){
             images: image,
             comment: comment
         }
-        fetch('https://kjmkirepohost.herokuapp.com/api/v1/incidents/redflags', {
+        fetch(`https://kjmkirepohost.herokuapp.com/api/v1/incidents/${type}`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json, text/plain, */*',
@@ -77,96 +79,14 @@ function addRedflag(){
 }
 
 window.onload = function GetRedFlags() {
-    fetch("https://kjmkirepohost.herokuapp.com/api/v1/incidents/redflags", {
+    fetch(`https://kjmkirepohost.herokuapp.com/api/v1/incidents/redflags`, {
         method: 'GET',
         headers: {
             'Content-type': 'application/json',
             'x-access-token': user_token
         },
     })
-      //  .then((response) => response.json())
-       //.then(response => console.log(response))
-    //    .then(function(message){
-    //        if(message['data']){
-    //             incident_records = ``
 
-    //             for (var incident = message['data'].length - 1; incident >= 0; incident--) {
-    //                 redflagId = message['data'][incident].id
-    //                 incidentStatus = message['data'][incident].status
-    //                 incident_records = ``
-
-    //                 if (incidentStatus === 'draft') {
-    //                     incident_records += `
-                            // <table id="myTable">
-                            //     <tr class="header">
-                            //         <th>Type</th>
-                            //         <th>Name</th>
-                            //         <th>Description</th>
-                            //         <th>Image</th>
-                            //         <th>Location</th>
-                            //         <th>State</th>
-                            //         <th>Edit</th>
-                            //         <th>Delete</th>
-                            //     </tr> 
-    //                             <tr>
-    //                                 <td id= "incident_type" >${message['data'][incident].type}</td><td id= "incident_name">${message['data'][incident].name}</td><td id="incident_description">${message['data'][incident].description}</td>
-    //                                 <td id="incident_image">${message['data'][incident].image}</td><td id="location">${message['data'][incident].location}</td>
-    //                                 <td id= "status">draft</td>
-    //                                 <td><a href="userEdit.html" id="submit" class="button2">Edit</a></td>
-    //                                 <td><input type="submit" value="delete" class="button2"></td>
-    //                             </tr>
-    //                         </table>
-    //                     <br/><br/>`
-                        
-    //                 }
-    //                 else {
-    //                     incident_records += `
-    //                     <div class="col-11">
-    //                         <table id="myTable">
-    //                             <tr class="header">
-    //                                 <th>Type</th>
-    //                                 <th>Name</th>
-    //                                 <th>Description</th>
-    //                                 <th>Image</th>
-    //                                 <th>Location</th>
-    //                                 <th>State</th>
-    //                                 <th>Edit</th>
-    //                                 <th>Delete</th>
-    //                             </tr> 
-    //                             <tr>
-    //                                 <td id= "incident_type" >${message['data'][item].type}</td>
-    //                                 <td id= "incident_name">
-    //                                 ${message['data'][incident].name}
-    //                                 </td>
-    //                                 <td id="incident_description">${message['data'][incident].description}</td>
-    //                                 <td id="incident_image">${message['data'][incident].image}</td>
-    //                                 <td id="location">${message['data'][incident].location}</td>
-    //                                 <td id= "status">${message['data'][incident].status}</td>
-    //                                 <td>You cannot Edit</td>
-    //                                 <td>You cannot delete</td>
-    //                             </tr>
-    //                         </table>
-    //                     </div>
-                        
-    //                     <br/>
-    //                     <br/>
-    //                     <br/>`
-
-    //                 }
-    //             }
-    //             document.getElementById('redflagViews').innerHTML = incident_records;
-    //         }
-    //         else if(message['message'] === 'incident record not found'){
-    //                 incident_records = `<h1>red-flag records not found!</h1>`;
-    //                 document.getElementById('redflagViews').innerHTML = incident_records;
-    //             }
-    //         else{
-    //                 incident_records=`<h1>token has expired please login again!</h1>`
-    //                 document.getElementById('redflagViews').innerHTML=incident_records;
-    //             }
-            
-            
-    //     });
         .then((response)=> response.json())
         .then(function (message){
             if(message['data']){
@@ -253,6 +173,7 @@ function updateComment(redflag_id){
 function updateLocation(redflag_id){
         var patched_location = document.getElementById('ed_location').value;
         var redflag_id = localStorage.getItem('redflag_id');
+        var type = localStorage.getItem('type');
     
         if (patched_location == "") {
             document.getElementById('message_location').innerHTML = "<p style='color: #f00; margin: 5px;'><strong>Error:</strong> Empty field new location</p>";
@@ -274,7 +195,7 @@ function updateLocation(redflag_id){
             .then((response) => response.json())
             .then(function (message) {
                 if (message['data'][0]['message'] === "Updated incident's location") {
-                    alert('Updated redflag location');
+                    alert('Updated record location');
                     window.location.replace('user_profile.html');
     
                 }
@@ -284,7 +205,7 @@ function updateLocation(redflag_id){
     
                 }
                 else{
-                    alert('redflag record not found');
+                    alert('record not found');
                     window.location.replace('user_profile.html')
                 }
         
@@ -306,7 +227,7 @@ function deleteRedflag(redflag_id){
         .then((response) => response.json())
         .then(function (message) {
             if (message['data'][0]['message'] === "Incident record has been deleted") {
-                alert('Deleted redflag record');
+                alert('Deleted record');
                 window.location.replace('user_profile.html');
 
             }
@@ -316,7 +237,7 @@ function deleteRedflag(redflag_id){
 
             }
             else{
-                alert('redflag record not found');
+                alert('record not found');
                 window.location.replace('user_profile.html')
             }
     
