@@ -7,7 +7,7 @@
     <meta name="author" content="Kaboha Jean Mark Kairumba">
     <meta name="keywords" content="reporting, corruption">
     <meta name="description" content="For voices to be heard. Fighting corruption">
-    <title> iReporter | Log in </title>
+    <title> iReporter | Update Status </title>
     <link rel="stylesheet" href="./css/style.css">
   </head>
 
@@ -15,11 +15,11 @@
     <header>
       <div class="container">
         <div id="branding">
-          <h1>i<span class="highlight">REPORTER</span> Anti-corruption service<h1>
+          <h1>i<span class="highlight">REPORTER</span><h1>
         </div>
         <nav>
           <ul>
-            <li class="current"><a href="userprofile.html">YOUR INCIDENTS</a></li>
+            <li class="current"><a href="update_status.html">UPDATE STATUS</a></li>
             <li><a href="index.html">LOGOUT</a></li>
           </ul>
         </nav>
@@ -37,17 +37,18 @@
         <form method=" " action="">
             <div id="message_location"></div>
             <table>
-               <tr>
-                  <td><label></label></td>
-                  <td><input class="form-control" type="select" name="status" id="ed_status" placeholder="enter new status"></td>
-                  <!-- <td><select>
-                        <option value="under investigation">under investigation</option>
-                        <option value="resolved">resolved</option>
-                        <option value="rejected">rejected</option>
-                      </select>
-                    </td> -->
-              </tr>
-            </table>
+              <tr>
+                 <td><label></label></td>
+                 <!-- <td><input class="form-control" type="select" name="status" id="ed_status" placeholder="enter new status"></td> -->
+                 <br>
+                 <td><select class="form-control" id="ed_status">
+                       <option value="under investigation">under investigation</option>
+                       <option value="resolved">resolved</option>
+                       <option value="rejected">rejected</option>
+                     </select>
+                   </td>
+             </tr>
+           </table>
                     <div>
                         <input type="button" id="submit" value="submit" class="button1" onclick="updateStatus()"/>
                         

@@ -1,20 +1,41 @@
-/**
-{
-    margin: 0px;
+
+@font-face {
+    font-family:Montserrat-Medium;
+    src: url(../fonts/Montserrat-Medium.otf)
 }
-*/
+@font-face {
+    font-family:Montserrat-Regular;
+    src: url(../fonts/Montserrat-Regular.otf)
+}
+@font-face {
+    font-family:Montserrat-Light;
+    src: url(../fonts/Montserrat-Light.otf)
+}
+/***************************/
+h1, h2{
+    font-family: Montserrat-Medium;
+}
+h3, h4{
+    font-family: Montserrat-Regular;  
+}
+p{
+    font-family: Montserrat-Light;
+}
 body
 {
     width: 100%;
     height: 100%;
     overflow-x:hidden;
+    margin:0px!important;
 }
 html{
     overflow-x: hidden;
+    margin: 0px;
 }
 
 a{
     text-decoration:none;
+    font-family: Montserrat-Light;
 }
 img {
     height: 100px;
@@ -58,18 +79,18 @@ header li{
   padding: 0 20px 0 20px; /* top, right, bottom, left , clockwise rotation*/
 }
 
-header #branding{
-  float:left;
+header #branding {
+    float: left;
+    margin-left: 30px;
 }
 
 header #branding h1 {
-    margin: 5px 0px;
+    margin: 5px 0px 5px 30px;
     font-size: 25px;
 }
-
-header nav{
-      float: right;
-    margin-right: 2%;
+header nav {
+    float: right;
+    margin-right: 3%;
 }
 
 header .highlight, header .current a{
@@ -140,7 +161,7 @@ header li {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    margin-top: 0px;
+    margin-top: 70px;
     margin-bottom: 180px;
     min-height: 140px;
     background: #35424a;
@@ -175,7 +196,7 @@ header li {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    margin-top: 0px;
+    margin-top: 50px;
     margin-bottom: 120px;
     min-height: 200px;
     background: #35424a;
@@ -235,7 +256,7 @@ header li {
 
 }
 .form-control {
-    /*width: 100%;*/
+    /* width: 100%; */
     background: none;
     color: white;
     padding: 10px 5px 10px 5px;
@@ -243,32 +264,41 @@ header li {
     margin: 5px 0px 5px 0px;
     border: 2px solid white;
     text-align: left;
-    
+    margin-bottom: 8px;
 }
+
 
 .button1 {
-
     height: 30px;
     background: #e8491d;
-    border-radius: 0.5px;
     border: 0;
     padding-left: 20px;
-    /*padding-top: 6px;*/
+    /* padding-top: 6px; */
     padding-right: 20px;
     color: #ffffff;
-    /*float: right;*/
+    /* float: right; */
     margin-right: 27px;
-
+    border-radius: 5px;
 }
+.home-bg .button1 {
+    height: 30px;
+    background: #e8491d;
+    border: 0;
+    padding: 10px;
+    color: #ffffff;
+    margin-right: 27px;
+    border-radius: 5px;
+}
+
 footer{
   padding:20px;
   color:#ffffff;
   background-color:#e8491d;
   text-align: center;
   width: 100%;
-  position: fixed;
+  /*position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 0;*/
 }
 @media (max-width:768px){
 .button1 {
@@ -373,7 +403,7 @@ footer{
 /* the table styling */
 #myTable {
     border-collapse: collapse;
-    width: 100%;
+    width: 95%;
     background-color: orange;
     border: 1px solid #ddd;
     font-size: 15px;
@@ -387,6 +417,8 @@ footer{
 #myTable td {
     text-align: left;
     padding: 12px;
+    border: 2px solid #222;
+    background-color: #fff;
 }
 
 #myTable th {
@@ -396,6 +428,7 @@ footer{
     background-color: #e8491d;
     font-size: 20px;
     font-weight: bold;
+    border: 2px solid #222;
 }
 
 #myTable tr {
@@ -407,24 +440,26 @@ footer{
     padding-left: 50px;
     padding-right: 50px;
 }
+
+
 .button2 {
-
     background: #e8491d;
-    border-radius: 0.5px;
+    border-radius: 10px;
     border: 0;
-    padding: 6px 10px;
+    padding: 4px 0px 7px;
     color: #ffffff;
-    margin-left: 25px;
-    width: 72%;
+    margin-left: auto;
+    width: 100%;
     float: right;
-    margin-right: 36px;
+    margin-right: auto;
     margin-top: 20px;
-
+    text-align: center;
+    display: block;
 }
 
 /*for the profile page*/
 .profile {
-    background-color: orange;
+    background-color: rgba(232, 73, 29, 0.9);
     border-radius: 10px;
     padding: 20px;
     min-height: 500px;
@@ -450,7 +485,7 @@ footer{
 .profile .dashboard-left {
     border-radius:1%;
     padding: 20px;
-    background-color: #e8491d;
+    background-color: grey;
     box-shadow: 2px 2px 4px #000;
     margin-right: 40px;
     width: 30%;
@@ -514,5 +549,79 @@ footer{
 .edit_inter table{
  width: 100%
 }
+#redflagViews{
+    min-height: 600px;
+}
+#allIncidentViews{
+   min-height: 550px; 
+}
+#showcase h1{
+    color:#fff;
+}
+
+#showcase table{
+    width:95%;
+}
+/*for the homepage */
+.home-bg{
+    background-color: rgba(232, 73, 29, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    min-height: 400px;
+    display: grid;
+    color:#000;
+}
+.home-bg p{
+    margin: 0px 50px;
+}
+.my-grids {
+    padding: 10px 58px;
+}
+.my-grids h3 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #222;
+}
+.my-grids h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e8491d;
+    font-size: 20px;
+}
+.my-grids .content-tile {
+    background-color: #fff;
+    height: 300px;
+    padding: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px #000;
+}
+.my-grids .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+     width: 90%; 
+}
+
+.my-grids .content-tile .img-holder{
+    height: 230px;
+    width: 100%;
+    overflow:hidden;
+
+}
+.my-grids .content-tile img{
+    background-color: #fff;
+    height: 330px;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all ease 1s;
+}
+.my-grids .content-tile img:hover{
+    transform: scale(1.2);
+    z-index: 1;
+}
+
 
 
