@@ -9,7 +9,7 @@
 }
 @font-face {
     font-family:Montserrat-Light;
-    src: url(../vendors/fonts/Montserrat-Light.otf)
+    src: url(../fonts/Montserrat-Light.otf)
 }
 /***************************/
 h1, h2{
@@ -26,9 +26,11 @@ body
     width: 100%;
     height: 100%;
     overflow-x:hidden;
+    margin:0px!important;
 }
 html{
     overflow-x: hidden;
+    margin: 0px;
 }
 
 a{
@@ -86,9 +88,9 @@ header #branding h1 {
     margin: 5px 0px 5px 30px;
     font-size: 25px;
 }
-header nav{
-      float: right;
-    margin-right: 2%;
+header nav {
+    float: right;
+    margin-right: 3%;
 }
 
 header .highlight, header .current a{
@@ -159,7 +161,7 @@ header li {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    margin-top: 0px;
+    margin-top: 70px;
     margin-bottom: 180px;
     min-height: 140px;
     background: #35424a;
@@ -194,7 +196,7 @@ header li {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    margin-top: 0px;
+    margin-top: 70px;
     margin-bottom: 120px;
     min-height: 200px;
     background: #35424a;
@@ -391,7 +393,7 @@ footer{
 /* the table styling */
 #myTable {
     border-collapse: collapse;
-    width: 94%;
+    width: 95%;
     background-color: orange;
     border: 1px solid #ddd;
     font-size: 15px;
@@ -400,7 +402,6 @@ footer{
     margin-right: 30px;
     margin-left: 50px;
     margin-bottom: 30px;
-
 }
 
 #myTable td {
@@ -435,7 +436,7 @@ footer{
     background: #e8491d;
     border-radius: 10px;
     border: 0;
-    padding: 2px 0px;
+    padding: 4px 0px 7px;
     color: #ffffff;
     margin-left: auto;
     width: 100%;

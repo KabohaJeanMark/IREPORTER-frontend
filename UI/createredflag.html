@@ -6,7 +6,7 @@
     <meta name="author" content="Kaboha Jean Mark Kairumba">
     <meta name="keywords" content="reporting, corruption">
     <meta name="description" content="For voices to be heard. Fighting corruption">
-    <title> iReporter | Create Redflag </title>
+    <title> iReporter | Create Incident </title>
     <link rel="stylesheet" href="./css/style.css">
   </head>
 
@@ -28,16 +28,24 @@
     <main>
         <section id="showcase">
             <div class="container">
-              <h1>Fill in form below to create an redflag post</h1>
+              <h1>Fill in form below to create an incident post</h1>
               <p></p>
             </div>
           <div class="user-edit-form">
             <form id="add_red">
               <div id="message"></div>
               <table>
+                  <tr>
+                      <td><label></label></td>
+                      <td><select class="form-control" id="incidentType">
+                          <option value="redflags">redflag</option>
+                          <option value="interventions">intervention</option>
+                        </select>
+                      </td>
+                  </tr>
                 <tr>
                     <td><label></label></td>
-                    <td><input class="form-control" type="text" name="name" id="name" placeholder="enter name"> </td>
+                    <td><input class="form-control" type="text" name="name" id="name" placeholder="enter title"> </td>
                 </tr>
                 <tr >
                     <td><label></label></td>
