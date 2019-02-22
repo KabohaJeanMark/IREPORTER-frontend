@@ -196,7 +196,7 @@ header li {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    margin-top: 70px;
+    margin-top: 50px;
     margin-bottom: 120px;
     min-height: 200px;
     background: #35424a;
@@ -280,6 +280,16 @@ header li {
     margin-right: 27px;
     border-radius: 5px;
 }
+.home-bg .button1 {
+    height: 30px;
+    background: #e8491d;
+    border: 0;
+    padding: 10px;
+    color: #ffffff;
+    margin-right: 27px;
+    border-radius: 5px;
+}
+
 footer{
   padding:20px;
   color:#ffffff;
@@ -546,11 +556,74 @@ footer{
    min-height: 550px; 
 }
 #showcase h1{
-    color:#333;
+    color:#fff;
 }
 
 #showcase table{
     width:95%;
 }
+/*for the homepage */
+.home-bg{
+    background-color: rgba(232, 73, 29, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    min-height: 400px;
+    display: grid;
+    color:#000;
+}
+.home-bg p{
+    margin: 0px 50px;
+}
+.my-grids {
+    padding: 10px 58px;
+}
+.my-grids h3 {
+    font-size: ;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #222;
+}
+.my-grids h2 {
+    font-size: ;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #e8491d;
+    font-size: 20px;
+}
+.my-grids .content-tile {
+    background-color: #fff;
+    height: 300px;
+    padding: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 5px #000;
+}
+.my-grids .container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+     width: 90%; 
+}
+
+.my-grids .content-tile .img-holder{
+    height: 230px;
+    width: 100%;
+    overflow:hidden;
+
+}
+.my-grids .content-tile img{
+    background-color: #fff;
+    height: 330px;
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all ease 1s;
+}
+.my-grids .content-tile img:hover{
+    transform: scale(1.2);
+    z-index: 1;
+}
+
 
 
