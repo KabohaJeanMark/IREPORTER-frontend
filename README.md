@@ -6,7 +6,7 @@ This application enables users to make reports about corruption incidents.
 Clone this project to your computer. You can work on and keep making it better.
 
 ## Project Link
-https://github.com/KabohaJeanMark/IREPORTER-CHALLENGE-4/tree/develope
+https://kabohajeanmark.github.io/IREPORTER-frontend/UI/
 
 
 ## Features
